@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "lint:styles": "stylelint --config .lint/.stylelintrc.json src/app/**/*.scss"
+    "lint:styles": "stylelint --config .lint/.stylelintrc.json src/app/**/*.scss",
+    "lint:html": "htmlhint --config .lint/.htmlhintrc src/app/**/*.html"
   },
   "private": true,
   "packageManager": "yarn@1.22.22",
@@ -30,6 +31,7 @@
     "@eslint/js": "^10.0.1",
     "angular-eslint": "21.3.1",
     "eslint": "^10.0.3",
+    "htmlhint": "^1.9.2",
     "jsdom": "^28.0.0",
     "prettier": "^3.8.1",
     "stylelint": "^17.11.0",
