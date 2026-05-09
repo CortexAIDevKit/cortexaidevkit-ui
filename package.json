@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "run-p mock:server \"ng serve\"",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
@@ -13,7 +13,8 @@
     "lint:ng": "ng lint",
     "format:prettier": "lint-staged",
     "format:all": "run-s format:prettier lint",
-    "prepare": "husky"
+    "prepare": "husky",
+    "mock:server": "json-server --watch mock/db.json --port 3000"
   },
   "private": true,
   "packageManager": "yarn@1.22.22",
@@ -40,6 +41,7 @@
     "htmlhint": "^1.9.2",
     "husky": "^9.1.7",
     "jsdom": "^28.0.0",
+    "json-server": "^1.0.0-beta.15",
     "lint-staged": "^17.0.3",
     "npm-run-all": "^4.1.5",
     "prettier": "^3.8.3",
