@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "run-p mock:server \"ng serve\"",
+    "start": "cross-env NODE_ENV=local run-p mock:server \"ng serve\"",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
@@ -27,6 +27,7 @@
     "@angular/router": "^21.2.0",
     "@ngx-translate/core": "^17.0.0",
     "@ngx-translate/http-loader": "^17.0.0",
+    "ngx-logger": "^5.0.12",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },
@@ -38,7 +39,9 @@
     "@commitlint/cli": "^21.0.0",
     "@commitlint/config-conventional": "^21.0.0",
     "@eslint/js": "^10.0.1",
+    "@ngx-env/builder": "^21.0.1",
     "angular-eslint": "21.3.1",
+    "cross-env": "^10.1.0",
     "eslint": "^10.0.3",
     "htmlhint": "^1.9.2",
     "husky": "^9.1.7",
