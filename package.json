@@ -7,9 +7,10 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "ng lint",
+    "lint": "run-p lint:ng lint:styles lint:html",
     "lint:styles": "stylelint --config .lint/.stylelintrc.json src/app/**/*.scss",
-    "lint:html": "htmlhint --config .lint/.htmlhintrc src/app/**/*.html"
+    "lint:html": "htmlhint --config .lint/.htmlhintrc src/app/**/*.html",
+    "lint:ng": "ng lint"
   },
   "private": true,
   "packageManager": "yarn@1.22.22",
@@ -33,6 +34,7 @@
     "eslint": "^10.0.3",
     "htmlhint": "^1.9.2",
     "jsdom": "^28.0.0",
+    "npm-run-all": "^4.1.5",
     "prettier": "^3.8.1",
     "stylelint": "^17.11.0",
     "stylelint-config-sass-guidelines": "^13.0.0",
