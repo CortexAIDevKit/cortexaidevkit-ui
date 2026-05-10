@@ -72,7 +72,7 @@ updates:
         patterns:
           - "cross-env"
           - "npm-run-all"
-          - "json-server"  
+          - "json-server"
 
   - package-ecosystem: github-actions
     directory: "/"
