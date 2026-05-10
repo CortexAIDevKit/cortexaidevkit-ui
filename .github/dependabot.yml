@@ -10,10 +10,8 @@ updates:
     versioning-strategy: increase
     commit-message:
       prefix: "build"
-      prefix-development: "chore"
+      prefix-development: "build"
       include: scope
-    assignees:
-      - CortexAIDevKit/cortex-core
     labels:
       - dependencies
       - automated
@@ -83,8 +81,6 @@ updates:
     commit-message:
       prefix: "ci"
       include: scope
-    assignees:
-      - CortexAIDevKit/cortex-core
     labels:
       - ci
       - automated
