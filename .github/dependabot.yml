@@ -1,0 +1,94 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: monday
+      time: "23:30"
+    open-pull-requests-limit: 10
+    versioning-strategy: increase
+    commit-message:
+      prefix: "build"
+      prefix-development: "chore"
+      include: scope
+    assignees:
+      - CortexAIDevKit/cortex-core
+    labels:
+      - dependencies
+      - automated
+    groups:
+      angular:
+        patterns:
+          - "@angular/*"
+          - "@angular-devkit/*"
+          - "@angular-eslint/*"
+          - "@schematics/angular"
+          - "ng-packagr"
+          - "zone.js"
+      typescript:
+        patterns:
+          - "typescript"
+          - "tslib"
+          - "@types/*"
+      eslint:
+        patterns:
+          - "eslint"
+          - "eslint-*"
+          - "@typescript-eslint/*"
+      testing:
+        patterns:
+          - "karma"
+          - "karma-*"
+          - "jasmine"
+          - "jasmine-*"
+          - "@types/jasmine"
+          - "vitest"
+          - "jsdom"
+      rxjs:
+        patterns:
+          - "rxjs"
+      commitlint:
+        patterns:
+          - "@commitlint/*"
+      stylelint:
+        patterns:
+          - "stylelint"
+          - "stylelint-*"
+      formatting:
+        patterns:
+          - "prettier"
+          - "htmlhint"
+      git-hooks:
+        patterns:
+          - "husky"
+          - "lint-staged"
+      ngx:
+        patterns:
+          - "@ngx-translate/*"
+          - "@ngx-env/*"
+          - "ngx-*"
+      dev-tools:
+        patterns:
+          - "cross-env"
+          - "npm-run-all"
+          - "json-server"  
+
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "ci"
+      include: scope
+    assignees:
+      - CortexAIDevKit/cortex-core
+    labels:
+      - ci
+      - automated
+    groups:
+      actions:
+        patterns:
+          - "*"
