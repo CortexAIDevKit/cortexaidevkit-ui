@@ -1,18 +1,11 @@
-import {
-  Injectable,
-  PLATFORM_ID,
-  computed,
-  effect,
-  inject,
-  signal,
-} from "@angular/core";
-import { isPlatformBrowser } from "@angular/common";
+import { Injectable, PLATFORM_ID, computed, effect, inject, signal } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
-export type Theme = "light" | "dark";
+export type Theme = 'light' | 'dark';
 
-const STORAGE_KEY = "theme";
+const STORAGE_KEY = 'theme';
 
-@Injectable({ providedIn: "root" })
+@Injectable({ providedIn: 'root' })
 export class ThemeService {
   private readonly isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 
@@ -20,14 +13,14 @@ export class ThemeService {
 
   readonly theme = signal<Theme>(this.resolveInitialTheme());
 
-  readonly isDark = computed(() => this.theme() === "dark");
+  readonly isDark = computed(() => this.theme() === 'dark');
 
   constructor() {
     effect(() => {
       const value = this.theme();
       if (!this.isBrowser) return;
 
-      document.documentElement.classList.toggle("dark", value === "dark");
+      document.documentElement.classList.toggle('dark', value === 'dark');
 
       if (this.userChosen()) {
         try {
@@ -40,7 +33,7 @@ export class ThemeService {
   }
 
   toggle(): void {
-    this.setTheme(this.theme() === "dark" ? "light" : "dark");
+    this.setTheme(this.theme() === 'dark' ? 'light' : 'dark');
   }
 
   setTheme(theme: Theme): void {
@@ -49,14 +42,12 @@ export class ThemeService {
   }
 
   private resolveInitialTheme(): Theme {
-    if (!this.isBrowser) return "dark";
+    if (!this.isBrowser) return 'dark';
     const stored = this.readStored();
-    if (stored === "light" || stored === "dark") return stored;
-    if (window.matchMedia?.("(prefers-color-scheme: dark)").matches)
-      return "dark";
-    if (window.matchMedia?.("(prefers-color-scheme: light)").matches)
-      return "light";
-    return "dark";
+    if (stored === 'light' || stored === 'dark') return stored;
+    if (window.matchMedia?.('(prefers-color-scheme: dark)').matches) return 'dark';
+    if (window.matchMedia?.('(prefers-color-scheme: light)').matches) return 'light';
+    return 'dark';
   }
 
   private readStored(): string | null {
