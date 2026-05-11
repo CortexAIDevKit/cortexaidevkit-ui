@@ -1,16 +1,12 @@
 {
   "extends": "stylelint-config-sass-guidelines",
-  "plugins": [
-    "stylelint-scss"
-  ],
+  "plugins": ["stylelint-scss"],
   "rules": {
     "color-hex-length": "long",
     "selector-pseudo-element-no-unknown": [
       true,
       {
-        "ignorePseudoElements": [
-          "ng-deep"
-        ]
+        "ignorePseudoElements": ["ng-deep"]
       }
     ]
   }

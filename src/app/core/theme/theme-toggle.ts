@@ -1,16 +1,14 @@
-import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
-import { ThemeService } from "./theme.service";
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ThemeService } from './theme.service';
 
 @Component({
-  selector: "cai-theme-toggle",
+  selector: 'cai-theme-toggle',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <button
       type="button"
       (click)="theme.toggle()"
-      [attr.aria-label]="
-        theme.isDark() ? 'Switch to light theme' : 'Switch to dark theme'
-      "
+      [attr.aria-label]="theme.isDark() ? 'Switch to light theme' : 'Switch to dark theme'"
       [attr.aria-pressed]="theme.isDark()"
       class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface)] text-[var(--foreground)] transition-colors hover:bg-[var(--background)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
     >
