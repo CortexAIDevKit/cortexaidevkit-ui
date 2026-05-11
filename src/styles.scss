@@ -1,1 +1,58 @@
-/* You can add global styles to this file, and also import other style files */
+@use "./tailwind.css";
+:root {
+  --background: #ffffff;
+  --surface: #f7f8f9;
+  --foreground: #1a1f23;
+  --muted: #5f6b76;
+  --border: #e5e8eb;
+  --accent: #dd0031;
+
+  color-scheme: light;
+}
+
+.dark {
+  --background: #0b0d10;
+  --surface: #15181d;
+  --foreground: #f1f3f5;
+  --muted: #9aa4ad;
+  --border: #232830;
+  --accent: #ff4081;
+
+  color-scheme: dark;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  letter-spacing: -0.005em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition:
+    background-color 200ms ease,
+    color 200ms ease;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+code,
+pre,
+kbd,
+samp {
+  font-family: var(--font-mono);
+}
