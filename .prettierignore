@@ -1,8 +1,8 @@
 package.json
 package-lock.json
-yarn
+yarn.lock
 yarn.error.log
-.github/*.*
-.git/*.*
+.github/
+.git/
 .gitignore
 .prettierignore
