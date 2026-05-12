@@ -54,7 +54,7 @@
     "prettier": "^3.8.3",
     "stylelint": "^17.11.0",
     "stylelint-config-sass-guidelines": "^13.0.0",
-    "stylelint-scss": "^7.0.0",
+    "stylelint-scss": "^7.1.1",
     "tailwindcss": "^4",
     "typescript": "~6.0.3",
     "typescript-eslint": "8.59.2",
